@@ -1,11 +1,10 @@
 import { withLinks } from '@storybook/addon-links';
 
-import './welcome.css';
-import welcome from './welcome.html';
+import todoList from './lwc-recipes/todoList/todoList';
 
 export default {
-  title: 'Welcome',
+  title: 'LWC Recipies',
   decorators: [withLinks],
 };
 
-export const Welcome = () => welcome;
+export const recipes = () => recipes;
