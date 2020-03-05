@@ -3,6 +3,6 @@ const packageJson = require('../../package.json');
 
 export default {
   packageJson,
-  framework: 'framework',
+  framework: 'lwc',
   frameworkPresets: [require.resolve('./framework-preset-lwc.js')],
 };
