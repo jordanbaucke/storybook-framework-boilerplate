@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Configuration } from 'webpack';
+import * as webpackMerge from 'webpack-merge'
 
 const JS_LOADER = {
   test: /\.js$/,
@@ -34,7 +35,7 @@ const TS_LOADER = {
 };
 
 export function webpack(config: Configuration) {
-  return {
+ return  {
     ...config,
     module: {
       ...config.module,
@@ -49,8 +50,15 @@ export function webpack(config: Configuration) {
           ],
         },
         JS_LOADER,
-        TS_LOADER,
+        TS_LOADER
       ],
     },
+    resolve: {
+      extensions: ['.js', '.ts', '.json'],
+      alias: {
+          lwc: require.resolve('@lwc/engine'),
+          '@lwc/wire-service': require.resolve('@lwc/wire-service')
+      }
+    }
   };
 }
