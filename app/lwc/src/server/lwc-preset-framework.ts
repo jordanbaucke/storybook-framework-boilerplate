@@ -9,7 +9,12 @@ export function webpack(config: Configuration) {
     module: {
       ...config.module,
       rules: [
-        ...config.module.rules
+        ...config.module.rules,
+        {
+          test: /\.stories\.js$/,
+          loaders: [require.resolve('@storybook/addon-storysource/loader')],
+          enforce: 'pre',
+        }
         // {
         //   test: /\.html$/,
         //   use: [
