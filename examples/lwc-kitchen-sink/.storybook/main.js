@@ -12,5 +12,6 @@ module.exports = {
     "@storybook/addon-options",
     "@storybook/addon-storysource",
     "@storybook/addon-viewport"
-  ]
+  ],
+  webpackFinal: (config) => console.dir(config, { depth: null }) || config,
 };

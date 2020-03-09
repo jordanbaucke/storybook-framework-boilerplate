@@ -1,5 +1,5 @@
 import { withLinks } from '@storybook/addon-links';
-import todoList from '../lwc-recipes-oss/todoList/todoList'
+import todoList from '../c/todoList/todoList'
 // import './welcome.css';
 // import welcome from './welcome.html';
 

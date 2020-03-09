@@ -1,5 +1,7 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Configuration } from 'webpack';
+const path = require('path');
+const LWCWebpackPlugin = require('lwc-webpack-plugin')
 
 export function webpack(config: Configuration) {
   return {
@@ -7,16 +9,27 @@ export function webpack(config: Configuration) {
     module: {
       ...config.module,
       rules: [
-        ...config.module.rules,
-        {
-          test: /\.html$/,
-          use: [
-            {
-              loader: require.resolve('html-loader'),
-            },
-          ],
-        },
+        ...config.module.rules
+        // {
+        //   test: /\.html$/,
+        //   use: [
+        //     {
+        //       loader: require.resolve('html-loader'),
+        //     },
+        //   ],
+        // },
       ],
     },
+    plugins: [
+      new LWCWebpackPlugin({
+          namespace: {
+              // LWC Namespace with path
+              c: path.resolve('./c'),
+          },
+          modules: [
+              "@salesforce-ux/design-system"
+          ]
+      })
+    ], 
   };
 }
