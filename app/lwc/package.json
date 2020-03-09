@@ -1,5 +1,5 @@
 {
-  "name": "@storybook/framework",
+  "name": "@storybook/lwc",
   "version": "0.0.1",
   "description": "Storybook for framework: View framework components in isolation with hot reloading.",
   "keywords": [
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "directory": "app/framework"
+    "directory": "app/lwc"
   },
   "license": "MIT",
   "files": [
